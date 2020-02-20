@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+}
+h1, h2{
+    color: #000000cc;
+}
+html, body { /*Por padrão os navegadores colocam uma margem de 8px, essa sessão força a margem = 0px */
+    margin: 0;
+}
+
+body {
+    display: flex; /*alinha tudo em linhas ou colunas*/
+    flex-direction: column;
+    height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+}
+footer { 
+    margin-top: auto;
+    padding: 16px;
+
+    border: 1px solid #eee;
+}
+header, main, footer {
+    text-align: center;
+}
+
+header p {
+    font-size:14px;
+}
+
+main h2 span {
+    color: #ff4f4f;
+}
+
+.donors {
+    display: grid; /*GRID - é como se quadriculasse o espaço em linhas e colunas! As proximas instruções definirão as caracteristicas*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*1 fr faz com os itens se flexibilie conforme o espaço disponivel*/
+
+}
+
+section.form { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px;
+    background-color: #ff4f4f;
+    padding: 16px 64px;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.form h2 {
+    text-align: right;
+    color: #ffffffdd;
+    font-size: 18px;
+}
+
+form input, form button { 
+    width: 100%;
+    
+    margin-bottom: 4px;
+    padding: 8px;
+
+   border-radius: 4px;
+   border: 1px #ffffff88 solid;
+}
+form input {
+    background-color: transparent;
+}
+
+form input::placeholder {
+    color: #ffffffaa;
+}
+
+form button{
+    font-weight: bold;
+}
+
+header, .form, main {
+    margin-bottom: 70px ;
+    width: 90%; /*largura dos elementos da pagina*/
+    max-width: 500px;
+    /*mantem os elementos centralizados mesmo com a movimentação do tamanho da janela do navegador*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1, main h2 {
+    margin-bottom: 70px;
+}
+
+header button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff4f4f;
+    color: #fff;
+    font-weight: bold;
+}
+
+.blood {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff4f4f;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+
+    /*FAZENDO A GOTINHA*/
+
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: rotate(-45deg);
+}
+
+.donor p {
+    margin-top: 24px;
+    font-size: 14px;
+    margin-bottom: 64px;
+}
+
+section.form {
+    transition: all 300ms ;         
+
+}
+
+section.form.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-bottom: -70px;
+}
